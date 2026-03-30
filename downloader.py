@@ -10,12 +10,12 @@ local_destination = input("Destination (default = './'): ")
 
 # Process destination path
 if(len(local_destination) > 0):
-    if(local_destination[0] != "/"):
-        local_destination = f"/{local_destination}"
+    if(local_destination[0] == "/"):
+        local_destination = local_destination[1:]
     if(local_destination[len(local_destination)-1] != "/"):
         local_destination = f"{local_destination}/"
 
-destination = f"{os.path.dirname(os.path.realpath(__file__))}{local_destination}"
+destination = f"{os.path.dirname(os.path.realpath(__file__))}/{local_destination}"
 print(f"Saving to: {destination}")
 
 
