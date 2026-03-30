@@ -28,6 +28,12 @@ while(url[gguf_index - slash_offset] != "/"):
 
 model_filename = url[(gguf_index - slash_offset + 1):(gguf_index + DOT_GGUF_LENGTH)]
 
+# Prompt for custom file name
+print(f"The current file name is: {model_filename}")
+custom_name_choice = input("Change the file name? (y / n): ").lower()
+
+if("y" in custom_name_choice):
+    model_filename = input("Enter custom file name (include '.gguf'): ")
 
 # Download the model
 os.system(f"wget -O {destination}{model_filename} {url}")
