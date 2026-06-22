@@ -35,12 +35,10 @@ custom_name_choice = ""
 # do-while loop
 while True:
     custom_name_choice = input("Change the file name? (y / N): ").lower()
-    
+
     # Condition check at the end
     if (custom_name_choice == "y" or custom_name_choice == "n" or custom_name_choice == ""):
         break
-
-print("Exited!")
 
 if(custom_name_choice == "y"):
     model_filename = input("Enter custom file name (include '.gguf'): ")
